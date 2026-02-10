@@ -21,7 +21,15 @@ fetch('data.json')
   })
   .then(data => { 
     const container = document.getElementById('stats-container');
-    container.innerHTML = `<div class="stats-item">Τύπος: ${data.fuel_type}</div>`;
+    container.innerHTML = `
+    <div class="stats-item">Τύπος: ${data.fuel_type}</div>
+    <div class="stats-item">Μέση Τιμή: ${data.avarage}</div>
+    <div class="stats-item"Μέγιστη Τιμή: ${data.max}</div>
+    <div class="stats-item"Ελάχιστη Τιμή: ${data.min}</div>
+
+
+    
+    `;
   })
   .catch(error => {
     document.getElementById('stats-container').innerText = "Σφάλμα: " + error.message;
